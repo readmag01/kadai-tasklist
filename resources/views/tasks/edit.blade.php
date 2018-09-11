@@ -9,6 +9,9 @@
         {!! Form::label('content', 'タスク内容:') !!}
         {!! Form::text('content') !!}
         
+        {!! Form::label('status', '進歩状況:') !!}
+        {!! Form::text('status') !!}
+        
         {!! Form::submit('更新') !!}
 
     {!! Form::close() !!}
