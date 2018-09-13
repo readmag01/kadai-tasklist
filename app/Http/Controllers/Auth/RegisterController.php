@@ -36,7 +36,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        //app/Http/Controllers/Auth/LoginControllerの__construct()関数へ飛ぶ
+       //LoginControllerの__construct()関数へ飛ぶ
         $this->middleware('guest');
     }
 
