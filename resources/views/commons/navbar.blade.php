@@ -13,16 +13,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     
-                    <!-- Auth::check()で現在の閲覧者がログイン中かどうかをチェック -->
+
                     @if (Auth::check())
-                        <li><a href="#">Users</a></li>
+                        
                         <li class="dropdown">
                             
-                            <!-- Auth::user()でログイン中のユーザーを取得　Auth::user()->nameでログイン中ユーザーの名前を取得 -->
+
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">My profile</a></li>
-                                <li role="separator" class="divider"></li>
+                                
                                 <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
                             </ul>
                         </li>

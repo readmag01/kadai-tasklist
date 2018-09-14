@@ -2,9 +2,10 @@
 
 @section('content')
 
+
     <h1>タスク一覧</h1>
     
-    @if (count($tasks) > 0)
+    @if (count(\App\Task::all()) > 0)
     <table class="table table-striped">
         <thead>
             <tr>
@@ -14,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($tasks as $task)
+            @foreach (\App\Task::all() as $task)
                 <tr>
                     <td>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!}</td>
                     <td>{{ $task->content }}</td>
@@ -23,10 +24,17 @@
             @endforeach
         </tbody>    
     </table>
-    @endif
+   
     
     {!! link_to_route('tasks.create', '新規タスクの作成', null, ['class' => 'btn btn-primary']) !!}
     
-    
+    @else
+    <div class="center jumbotron">
+        <div class="text-center">
+            <h1>Let's Create New Task!</h1>
+            {!! link_to_route('tasks.create', '新規タスクの作成', null, ['class' => 'btn btn-primary']) !!}
+        </div>
+    </div>
+    @endif
     
 @endsection

@@ -25,6 +25,10 @@ class LoginController extends Controller
      *
      * @var string
      */
+    
+     /*ログイン情報を受け取り、checkしてサインアップ認証OKなら
+    　route/web.phpのRoute::get('/', ~~~)へ送られる*/ 
+     
     protected $redirectTo = '/';
 
     /**
